@@ -1,0 +1,30 @@
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title"><%= contact.nama %></h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary"><%= contact.email %></h6>
+    <p class="card-text"><%= contact.nohp %></p>
+    <!-- <a
+      href="/contact/delete/<%= contact._id %>"
+      class="btn badge btn-danger text-decoration-none"
+      onclick="return confirm('Are you sure?')"
+      >delete</a> -->
+    <form action="/contact?_method=DELETE" method="post" class="d-inline">
+      <input type="hidden" name="idcontact" value="<%= contact._id %>">
+      <button
+        type="submit"
+        class="btn badge btn-danger"
+        onclick="return confirm('are you sure?')"
+      >
+        delete
+      </button>
+    </form>
+
+    <a
+      href="/contact/edit/<%= contact._id %>"
+      class="btn badge btn-primary text-decoration-none"
+      >edit</a
+    >
+
+    <a href="/contact" class="card-link d-block">Back</a>
+  </div>
+</div>
